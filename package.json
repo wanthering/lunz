@@ -1,0 +1,25 @@
+{
+  "name": "sao-npm-dev",
+  "version": "0.0.0",
+  "description": "my wonderful SAO generator",
+  "repository": {
+    "url": "wanthering/sao-mycustomapp",
+    "type": "git"
+  },
+  "author": "wanthering <kend888@163.com> (github.com/wanthering)",
+  "license": "MIT",
+  "files": [
+    "saofile.js",
+    "template"
+  ],
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "superb": "^1.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "sao": "^1.0.0"
+  }
+}

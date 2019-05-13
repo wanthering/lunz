@@ -1,0 +1,44 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "description": "<%= description %>",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "<% if(build === 'bili') { %>bili<% }else{ %>npx babel src --out-dir dist<% } %>"<% if(test){ %>,
+    "test": "npx jest"<% } %><% if(linter){ %>,
+    "lint": "npx eslint src/**/*.js<% } if(linter && test){ %> test/**/*.js<% } if(linter){ %> --fix"<% } %>
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%= author %>/<%= name %>.git"
+  },
+  "author": "<%= author %>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/<%= author %>/<%= name %>/issues"
+  }<% if(prettier){ %>,
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
+  }<% } %>,
+  "homepage": "https://github.com/<%= author %>/<%= name %>#readme",
+  "devDependencies": {
+    <% if(build === 'bili'){ %>
+    "bili": "^4.7.4"<% } %><% if(build === 'babel'){ %>
+    "@babel/cli": "^7.4.4"<% } %><% if(build === 'babel' || test){ %>,
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4"<% } %><% if(test){ %>,
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0"<% } %><% if(linter){ %>,
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0"<% } %><% if(linter && test){ %>,
+    "eslint-plugin-jest": "^22.5.1"<% } %><% if (prettier){ %>,
+    "prettier": "^1.17.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-config-prettier": "^4.2.0"<% } %>
+  }
+}
