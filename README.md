@@ -18,7 +18,7 @@ lunz my-project-name
 2. 新建一个分支:`git checkout -b my-new-feature`
 3. 上报你的更新：`git commit -am 'Add some feature'`
 4. 分支上传云端：`git push origin my-new-feature`
-5. 提交 pull request😘
+5. 提交 `pull request`😘
 
 ## 作者
 

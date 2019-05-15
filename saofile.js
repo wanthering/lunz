@@ -94,19 +94,23 @@ module.exports = {
       }
     }
     console.log()
-    console.log(this.chalk.bold(`  To lint the project:\n`))
-    cd()
-    if(this.answers.pm === 'yarn')  console.log(`\tyarn lint\n`)
-    else console.log(`\tnpm run lint\n`)
-    console.log(this.chalk.bold(`  launch unit tests:\n`))
-    cd()
-    if(this.answers.pm === 'yarn')  console.log(`\tyarn test\n`)
-    else console.log(`\tnpm run test\n`)
+    if (this.answers.features.includes('linter')) {
+      console.log(this.chalk.bold(`  To lint the project:\n`))
+      cd()
+      if (this.answers.pm === 'yarn') console.log(`\tyarn lint\n`)
+      else console.log(`\tnpm run lint\n`)
+    }
+    if (this.answers.test) {
+      console.log(this.chalk.bold(`  launch unit tests:\n`))
+      cd()
+      if (this.answers.pm === 'yarn') console.log(`\tyarn test\n`)
+      else console.log(`\tnpm run test\n`)
+    }
     console.log(this.chalk.bold(`\n  To build the project:\n`))
     cd()
-    if(this.answers.pm === 'yarn')  console.log(`\tyarn build\n`)
+    if (this.answers.pm === 'yarn') console.log(`\tyarn build\n`)
     else console.log(`\tnpm run build\n`)
-    console.log(this.chalk.bold(`\tTo publish after built:\n`))
+    console.log(this.chalk.bold(`  To publish after built:\n`))
     console.log(`\tnpm publish\n`)
     console.log(this.chalk.grey(`(please make sure you have logged in npm)`))
   }

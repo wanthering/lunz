@@ -1,12 +1,11 @@
 {
   "name": "<%= name %>",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "<%= description %>",
-  "main": "dist/index.js",
   "scripts": {
-    "build": "<% if(build === 'bili') { %>bili<% }else{ %>npx babel src --out-dir dist<% } %>"<% if(test){ %>,
-    "test": "npx jest"<% } %><% if(linter){ %>,
-    "lint": "npx eslint src/**/*.js<% } if(linter && test){ %> test/**/*.js<% } if(linter){ %> --fix"<% } %>
+    "build": "<% if(build === 'bili') { %>bili<% }else{ %>babel src --out-dir dist<% } %>"<% if(test){ %>,
+    "test": "jest"<% } %><% if(linter){ %>,
+    "lint": "eslint src/**/*.js<% } if(linter && test){ %> test/**/*.js<% } if(linter){ %> --fix"<% } %>
   },
   "repository": {
     "type": "git",

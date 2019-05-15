@@ -1,14 +1,16 @@
 {
-  "name": "sao-npm-dev",
-  "version": "0.0.0",
-  "description": "my wonderful SAO generator",
+  "name": "lunz",
+  "version": "0.0.2",
+  "description": "Creating lunz in seconds",
+  "bin": "cli.js",
   "repository": {
-    "url": "wanthering/sao-mycustomapp",
+    "url": "git+https://github.com/wanthering/lunz",
     "type": "git"
   },
-  "author": "wanthering <kend888@163.com> (github.com/wanthering)",
+  "author": "wanthering <kend888@163.com>",
   "license": "MIT",
   "files": [
+    "cli.js",
     "saofile.js",
     "template"
   ],
